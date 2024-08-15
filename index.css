@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --color-sea-green: hsl(192, 37%, 48%);
+  --color-dark-purple: hsl(258, 34%, 53%);
+  --color-light-purple: hsl(268, 100%, 86%);
+  --color-grey: hsl(240, 10%, 57%);
+  --color-light-grey: hsla(240, 10%, 57%, 0.25);
+  --color-dark-grey: hsl(240, 21%, 20%);
+  --color-cyan: hsl(192, 90%, 77%);
+  --color-white: hsl(0, 0%, 98%);
+  --cyan-hover: hsla(192, 54%, 64%, 1);
+  --violet-hover: hsla(268, 55%, 71%, 1);
+  --dark-cyan: hsla(192, 37%, 48%, 1);
+  --fs-16: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Display';
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation */
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.image-hero-right,
+.image-hero-left {
+  display: none;
+}
+
+header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+header .meet-icon {
+  transition: 1s ease;
+  /* Prepare for the transformation with a smooth transition */
+}
+
+header .meet-icon:hover {
+  transform: rotate(360deg);
+}
+
+header .meet {
+  transform: translateX(10%);
+  transition: 0.5s ease;
+}
+
+header .meet:hover {
+  transform: scale(1.03);
+}
+
+main .image-hero {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 50px;
+  transition: opacity 0.5s ease, content 0.5s ease;
+  /* Apply transition effect */
+}
+
+main .image-hero:hover {
+  opacity: 90%;
+  content: url(assets/tablet/image-hero-hover.png);
+}
+
+main h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-dark-grey);
+}
+
+.gradient-text {
+  background: linear-gradient(92.19deg, hsl(258, 34%, 53%), hsl(192, 37%, 48%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text {
+  margin-top: 15px;
+  width: 18.75rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: var(--fs-16);
+  font-weight: 500;
+  color: var(--color-grey);
+}
+
+.btn-1,
+.btn-3 {
+  background-color: var(--color-sea-green);
+  border: none;
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: var(--fs-16);
+  font-weight: 900;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.btn-1:hover {
+  background-color: var(--cyan-hover);
+}
+
+.btn-1 span {
+  color: var(--color-cyan);
+}
+
+.btn-2 {
+  background-color: var(--color-dark-purple);
+  color: var(--color-light-purple);
+  border: none;
+  padding: 1rem 2.3rem;
+  border-radius: 50px;
+  font-size: var(--fs-16);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.btn-2:hover,
+.btn-3:hover {
+  background-color: var(--violet-hover);
+}
+
+
+.btn-3 {
+  background-color: var(--color-dark-purple);
+}
+
+.btn-3 span {
+  color: var(--color-light-purple);
+}
+
+.number-bar {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.vertical-bar {
+  display: block;
+  height: 90px;
+  /* Height of the bar */
+  width: 0;
+  /* No width, just a border */
+  border-left: 1px solid var(--color-light-grey);
+  /* The vertical bar */
+  margin: 0 auto;
+}
+
+.number-1,
+.number-2 {
+  border: 1px solid var(--color-light-grey);
+  display: inline-block;
+  /* Makes the element inline so it fits around the content */
+  width: 50px;
+  /* Width of the circle */
+  height: 50px;
+  /* Height of the circle */
+  line-height: 50px;
+  /* Centers the number vertically */
+  border-radius: 50%;
+  /* Creates the circular shape */
+  background-color: var(--color-white);
+  /* Background color of the circle */
+  color: var(--color-grey);
+  /* Text color */
+  text-align: center;
+  /* Centers the number horizontally */
+  font-size: 16px;
+  /* Font size of the number */
+  font-weight: bold;
+  /* Make the number bold */
+}
+
+.container-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 1.5rem;
+  gap: 25px;
+  border-radius: 1rem;
+}
+
+.container-img:hover .gallery-img img {
+  opacity: 0.7;
+}
+
+.gallery-img img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  transition: 0.9s ease;
+  opacity: 0;
+}
+
+.gallery-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 1px 0px 8px rgba(226, 226, 226, 0.44);
+}
+
+.container-img .gallery-img:hover img {
+  opacity: 1;
+}
+
+.section-text {
+  margin-top: 50px;
+}
+
+.section-text span {
+  color: var(--color-sea-green);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section-text h1 {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  font-size: 1.9rem;
+  opacity: 0.9;
+}
+
+.section-text p {
+  margin-bottom: 50px;
+}
+
+.number-2 {
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+footer {
+  content: "";
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+  background-image: url(assets/mobile/image-footer.jpg);
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  transform: translateY(-5%);
+}
+
+.bgimg {
+  background: linear-gradient(hsla(192, 47%, 55%, 0.85), hsla(192, 37%, 45%, 0.85));
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+}
+
+
+.footer-text {
+  padding-top: 70px;
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-white);
+}
+
+p {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+@media (min-width:768px) {
+
+  .text {
+    width: 100%;
+    max-width: 22rem;
+    text-align: center;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-1,
+  .btn-2 {
+    margin-top: 50px;
+  }
+
+  footer {
+    background-image: url(assets/tablet/image-footer.jpg);
+    height: 420px;
+  }
+
+  .bgimg {
+    height: 420px;
+  }
+
+  .btn-3 {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width:1091px) {
+
+  body {
+    display: block;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-hero-left {
+    content: url(assets/desktop/image-hero-left.png);
+    transform: translateY(-5%);
+    transition: 1 ease, content 1 ease;
+  }
+
+  .image-hero-right {
+    content: url(assets/desktop/image-hero-right.png);
+    transition: 1 ease, content 1 ease;
+  }
+
+  .image-hero-right,
+  .image-hero-left {
+    display: block;
+  }
+
+  .image-hero-left:hover {
+    content: url(assets/desktop/image-hero-left-hover.png);
+  }
+
+  .image-hero-right:hover {
+    content: url(assets/desktop/image-hero-right-hover.png);
+  }
+
+  .image-hero-left:hover,
+  .image-hero-right:hover {
+    opacity: 80%;
+  }
+
+  .image-hero {
+    display: none;
+  }
+
+  .container-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .text {
+    max-width: 29rem;
+  }
+
+  footer {
+    background-image: url(assets/desktop/image-footer.jpg);
+    height: 370px;
+  }
+
+  .bgimg {
+    height: 370px;
+  }
+
+  .footer-text {
+    transform: translateY(20%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 1120px;
+    max-width: 100%;
+  }
+
+  .footer-text h1,
+  p {
+    text-align: left;
+    width: 310px;
+  }
+}
